@@ -1,0 +1,5 @@
+> db.products.ensureIndex({for:1})
+Q1 : 4
+Q2 : 4
+Q3 : YES
+

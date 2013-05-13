@@ -1,0 +1,61 @@
+>  db.products.find({for:{$exists:1},for:"ac3"}).forEach( function(item) { printjson(item) } )
+{
+	"_id" : ObjectId("507d95d5719dbef170f15bf9"),
+	"name" : "AC3 Series Charger",
+	"type" : [
+		"accessory",
+		"charger"
+	],
+	"price" : 19,
+	"warranty_years" : 0.25,
+	"for" : [
+		"ac3",
+		"ac7",
+		"ac9"
+	]
+}
+{
+	"_id" : ObjectId("507d95d5719dbef170f15bfb"),
+	"name" : "Phone Extended Warranty",
+	"type" : "warranty",
+	"price" : 38,
+	"warranty_years" : 2,
+	"for" : [
+		"ac3",
+		"ac7",
+		"ac9",
+		"qp7",
+		"qp8",
+		"qp9"
+	]
+}
+{
+	"_id" : ObjectId("507d95d5719dbef170f15bfc"),
+	"name" : "AC3 Case Black",
+	"type" : [
+		"accessory",
+		"case"
+	],
+	"color" : "black",
+	"price" : 12.5,
+	"warranty_years" : 0.25,
+	"available" : false,
+	"for" : "ac3"
+}
+{
+	"_id" : ObjectId("507d95d5719dbef170f15bfd"),
+	"name" : "AC3 Case Red",
+	"type" : [
+		"accessory",
+		"case"
+	],
+	"color" : "red",
+	"price" : 12,
+	"warranty_years" : 0.25,
+	"available" : true,
+	"for" : "ac3"
+}
+> db.products.find({for:{$exists:1},for:"ac3"}).forEach( function(item) { db.products.update({_id:item._id},{$inc:{price:2}}) } )
+> homework.c()
+89.5954.5
+

@@ -1,0 +1,12 @@
+var prod1 = db.products.findOne({_id:ObjectId("507d95d5719dbef170f15c00")})
+
+prod1.term_years = 3
+
+db.products.update({_id:prod1._id},prod1)
+
+prod1.limits.sms.over_rate = 0.01
+
+db.products.update({_id:prod1._id},prod1)
+
+> homework.b()
+0.050.019031
